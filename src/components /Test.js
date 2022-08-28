@@ -1,25 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import Draggable from "react-draggable"; // The default
-import { DraggableCore } from "react-draggable"; // <DraggableCore>
+import Pic1 from "../Media/Pic1.jpg";
 
 const Container = styled.div`
-  height: 1000px;
+  height: 3000px;
   width: 100%;
-  background-color: pink;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
 `;
 
-const MovableBox = styled.div`
-  height: 100px;
-  width: 120px;
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Picture1 = styled.div`
+  height: 200px;
+  width: 350px;
+  margin-top: 300px;
+  background-image: url(${Pic1});
+  background-size: cover;
+  transform: rotate(20deg);
+
+  .transform {
+    transform: rotate(20deg);
+  }
 `;
 
 const MovableBox2 = styled.div`
@@ -54,9 +57,9 @@ const Test = () => {
     <div>
       <Container>
         <Draggable>
-          <MovableBox>
-            <h5>Move Me Spencer!</h5>
-          </MovableBox>
+          <div className="transform">
+            <Picture1 />
+          </div>
         </Draggable>
         <Draggable>
           <MovableBox2>
