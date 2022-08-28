@@ -7,21 +7,24 @@ const Container = styled.div`
   height: 3000px;
   width: 100%;
   background-color: white;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 const Picture1 = styled.div`
   height: 200px;
   width: 350px;
-  margin-top: 300px;
+  position: fixed;
   background-image: url(${Pic1});
   background-size: cover;
   transform: rotate(20deg);
 
   .transform {
     transform: rotate(20deg);
+    margin-top: 700px;
+    margin-right: 400px;
   }
 `;
 
