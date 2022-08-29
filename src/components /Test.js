@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Draggable from "react-draggable"; // The default
+import Draggable from "react-draggable";
 import Pic1 from "../Media/Pic1.jpg";
 import Pic2 from "../Media/Pic2.jpg";
 import Pic3 from "../Media/Pic3.jpg";
@@ -12,16 +12,51 @@ import Pic8 from "../Media/Pic8.jpg";
 import Pic9 from "../Media/Pic9.jpg";
 import Pic10 from "../Media/Pic10.jpg";
 
+const Header = styled.div`
+  height: 100px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 99;
+
+  .left {
+    height: 100%;
+    width: 50%;
+    background: none;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    font-size: 40px;
+    @media only screen and (max-width: 600px) {
+      font-size: 15px;
+    }
+  }
+
+  .right {
+    height: 100%;
+    width: 35%;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 40px;
+    @media only screen and (max-width: 600px) {
+      font-size: 15px;
+      width: 50%;
+      margin-right: 15px;
+    }
+  }
+`;
+
 const Container = styled.div`
   height: 3000px;
   width: 100%;
   background-color: white;
   overflow: hidden;
-`;
 
-const Testy = styled.div`
-  height: 30%;
-  width: 100%;
+  @media only screen and (max-width: 600px) {
+    height: 1300px;
+  }
 `;
 
 const Picture1 = styled.div`
@@ -34,6 +69,13 @@ const Picture1 = styled.div`
   z-index: 1;
   margin-left: 400px;
   margin-top: 900px;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 50px;
+    margin-top: 200px;
+  }
 `;
 
 const Picture2 = styled.div`
@@ -46,6 +88,13 @@ const Picture2 = styled.div`
   z-index: 2;
   margin-left: 1700px;
   margin-top: 2000px;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 100px;
+    margin-top: 500px;
+  }
 `;
 
 const Picture3 = styled.div`
@@ -58,6 +107,13 @@ const Picture3 = styled.div`
   margin-left: -100px;
   margin-top: 1200px;
   z-index: 3;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 200px;
+    margin-top: 300px;
+  }
 `;
 
 const Picture4 = styled.div`
@@ -70,6 +126,13 @@ const Picture4 = styled.div`
   margin-left: 400px;
   margin-top: 100px;
   z-index: 4;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 1000px;
+  }
 `;
 
 const Picture5 = styled.div`
@@ -82,6 +145,13 @@ const Picture5 = styled.div`
   margin-left: 900px;
   margin-top: 100px;
   z-index: 4;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 50px;
+    margin-top: 200px;
+  }
 `;
 
 const Picture6 = styled.div`
@@ -94,6 +164,13 @@ const Picture6 = styled.div`
   margin-left: 1400px;
   margin-top: 1100px;
   z-index: 4;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 600px;
+  }
 `;
 
 const Picture7 = styled.div`
@@ -106,6 +183,13 @@ const Picture7 = styled.div`
   margin-left: 1000px;
   margin-top: 800px;
   z-index: 4;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 90px;
+    margin-top: 40px;
+  }
 `;
 
 const Picture8 = styled.div`
@@ -118,6 +202,13 @@ const Picture8 = styled.div`
   margin-left: 700px;
   margin-top: 2600px;
   z-index: 4;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 150px;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
 `;
 
 const Picture9 = styled.div`
@@ -130,6 +221,13 @@ const Picture9 = styled.div`
   margin-left: 1400px;
   margin-top: 1500px;
   z-index: 4;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 200px;
+    margin-left: 100px;
+    margin-top: 1100px;
+  }
 `;
 
 const Picture10 = styled.div`
@@ -142,11 +240,28 @@ const Picture10 = styled.div`
   margin-left: 400px;
   margin-top: 2100px;
   z-index: 4;
+
+  @media only screen and (max-width: 600px) {
+    height: 100px;
+    width: 250px;
+    margin-left: 30px;
+    margin-top: 70px;
+  }
 `;
 
 const Test = () => {
   return (
     <div>
+      <Header>
+        <div className="left">
+          <div>Logo?</div>
+        </div>
+        <div className="right">
+          <div>Insta</div>
+          <div>Social</div>
+          <div>Bio</div>
+        </div>
+      </Header>
       <Container>
         <Draggable>
           <div>
